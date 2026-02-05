@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
+import logo from '/logos33.png'
 import { Offline, Online } from "react-detect-offline";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWifi } from "@fortawesome/free-solid-svg-icons";
@@ -63,7 +64,7 @@ export default function Navbar() {
               </g>
             </svg> */}
             
-            <img className="logo-text" src="./src/assets/img/logos33.png" alt="" />
+            <img className="logo-text" src={logo} alt="" />
           
 
           {/* <span className="logo-text">Cinema</span> */}
