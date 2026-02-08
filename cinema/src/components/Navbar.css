@@ -191,3 +191,6 @@
     width: 70px;
   }
 }
+.theme-toggle .sun, .theme-toggle .moon{
+  width: 24px;
+}

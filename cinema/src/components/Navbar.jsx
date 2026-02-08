@@ -105,8 +105,10 @@ export default function Navbar() {
           onChange={handleChange}
         />
         <button className="theme-toggle" onClick={toggleTheme}>
-          <span className="sun">☀</span>
-          <span className="moon">🌙</span>
+          {/* <span className="sun">☀</span>
+          <span className="moon">🌙</span> */}
+          <img className="sun" src="/light.svg" alt="" />
+          <img className="moon" src="/night.svg" alt="" />
         </button>
         <button
           className="navbar-toggler"
