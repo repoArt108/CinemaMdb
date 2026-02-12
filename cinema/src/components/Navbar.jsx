@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
-import logo from '/logos33.png'
+import logo from "/logos33.png";
 import { Offline, Online } from "react-detect-offline";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWifi } from "@fortawesome/free-solid-svg-icons";
 import { box } from "./Context/Context";
 export default function Navbar() {
   let { searchQuery, handleChange } = useContext(box);
@@ -29,11 +28,10 @@ export default function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg ">
-
       <div className="container">
         <div className="main-header">
-        <Link className="navbar-brand logo" to="/home">
-          {/* <span className="logo-icon">🎬</span> */}
+          <Link className="navbar-brand logo" to="/home">
+            {/* <span className="logo-icon">🎬</span> */}
             {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 190.24 81.52"
@@ -63,74 +61,79 @@ export default function Navbar() {
                 />
               </g>
             </svg> */}
-            
+
             <img className="logo-text" src={logo} alt="" />
-          
 
-          {/* <span className="logo-text">Cinema</span> */}
-        </Link>
-        <div className="collapse navbar-collapse  "  id="navbarSupportedContent">
-          <ul className="navbar-nav  mx-auto mb-lg-0">
-            <li className="nav-item">
-              <NavLink className="nav-link " aria-current="page" to="home">
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link " to="movies">
-                Movies
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="tv">
-                TV Shows
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="people">
-                People
-              </NavLink>
-            </li>
-          </ul>
-          {/* <form onSubmit={searchMovieDb} className="d-flex" id="search-on"></form> */}
-        </div>
-        <div className="right-col d-flex">
-
-        <input
-          className="form-control search-input me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-          value={searchQuery}
-          onChange={handleChange}
-        />
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {/* <span className="sun">☀</span>
+            {/* <span className="logo-text">Cinema</span> */}
+          </Link>
+          <div
+            className="collapse navbar-collapse  "
+            id="navbarSupportedContent"
+          >
+            <ul className="navbar-nav  mx-auto mb-lg-0">
+              <li className="nav-item">
+                <NavLink className="nav-link " aria-current="page" to="home">
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link " to="movies">
+                  Movies
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="tv">
+                  TV Shows
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="people">
+                  People
+                </NavLink>
+              </li>
+            </ul>
+            {/* <form onSubmit={searchMovieDb} className="d-flex" id="search-on"></form> */}
+          </div>
+          <div className="right-col d-flex justify-content-between">
+            <input
+              className="form-control search-input me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              value={searchQuery}
+              onChange={handleChange}
+            />
+            <button className="theme-toggle" onClick={toggleTheme}>
+              {/* <span className="sun">☀</span>
           <span className="moon">🌙</span> */}
-          <img className="sun" src="/light.svg" alt="" />
-          <img className="moon" src="/night.svg" alt="" />
-        </button>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="on-stats">
+              <img className="sun" src="/light.svg" alt="" />
+              <img className="moon" src="/night.svg" alt="" />
+            </button>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="watchlist">
+              <img className="save-night" src="/bookmark-night.png" alt="" />
+              <img className="save-light" src="/bookmark-light.png" alt="" />
+                
+            </div>
+
+            {/* <div className="on-stats">
           <Online>
             <span>online</span>
             <FontAwesomeIcon className="wifi-icon" icon={faWifi} />
-            {/* <i className="fa-notdog fa-solid fa-wifi"></i> */}
           </Online>
           <Offline> Offline (surprise!)</Offline>
-        </div>
-        </div>
-
+        </div> */}
+          </div>
         </div>
       </div>
     </nav>

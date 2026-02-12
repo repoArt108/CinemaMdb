@@ -16,7 +16,8 @@ export default function Details() {
   const [showTrailer, setShowTrailer] = useState(false);
   const [trailerKey, setTrailerKey] = useState(null);
   const [isTrailerLoading, setIsTrailerLoading] = useState(true);
-
+  console.log(type)
+  console.log(id)
   useEffect(() => {
     async function fetchDetails() {
       const { data } = await axios.get(
@@ -180,7 +181,21 @@ export default function Details() {
                   ) : (
                     <p className="mt-3">Trailer not available</p>
                   )}
-
+                  {isTrailerLoading ? (
+                    <div className="d-flex align-items-center gap-2 mt-3">
+                      <PacmanLoader color="#0d9ffc" size={16} />
+                      <span className="text-muted">Checking trailer...</span>
+                    </div>
+                  ) : trailerKey ? (
+                    <Link to={`/${type}/${id}/images`}
+                      className="trailer-btn"
+                      onClick={() => setShowTrailer(true)}
+                    >
+                      Show images
+                    </Link>
+                  ) : (
+                    <p className="mt-3">Trailer not available</p>
+                  )}
                   <div className="people-grid">
                     {directors.map((item) => (
                       <div className="profile" key={item.id}>

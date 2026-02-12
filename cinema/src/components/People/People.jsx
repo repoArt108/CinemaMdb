@@ -7,11 +7,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './People.css'
-import { box } from "./Context/Context";
+import { box } from "../Context/Context.jsx";
 export default function People() {
   let [dataApi, setDataApi] = useState([]);
-  let {show,searchQuery}= useContext(box)
-  
+  let { show, searchQuery } = useContext(box)
+
 
   async function getData() {
     let { data } = await axios.get(
@@ -49,28 +49,28 @@ export default function People() {
 
       <div className="movie-slider">
         <Slider {...settings}>
-          {dataApi.map((item,index) => (
+          {dataApi.map((item, index) => (
             <div key={index}>
-            <Link
-              key={item.id}
-              to={`gallery/${item.id}`}
-              className="movie-link-slider"
-            >
-              <img
-                className="poster-img"
-                src={
-                  item.profile_path
-                    ? `https://image.tmdb.org/t/p/w500${item.profile_path}`
-                    : "/images/poster-fallback.jpg"
-                }
-                alt={item.name}
-                loading="lazy"
-              />
-              <div className="movie-content">
-                <h3 className="movie-title">{item.name}</h3>
-                {/* <p className="movie-overview">{item.overview}</p> */}
-              </div>
-            </Link>
+              <Link
+                key={item.id}
+                to={`gallery/${item.id}`}
+                className="movie-link-slider"
+              >
+                <img
+                  className="poster-img"
+                  src={
+                    item.profile_path
+                      ? `https://image.tmdb.org/t/p/w500${item.profile_path}`
+                      : "/images/poster-fallback.jpg"
+                  }
+                  alt={item.name}
+                  loading="lazy"
+                />
+                <div className="movie-content">
+                  <h3 className="movie-title">{item.name}</h3>
+                  {/* <p className="movie-overview">{item.overview}</p> */}
+                </div>
+              </Link>
 
             </div>
           ))}
@@ -82,16 +82,28 @@ export default function People() {
             <div className="col-lg-3 col-md-6 py-4" key={index}>
               <div className="movie-card">
                 <Link to={`gallery/${item.id}`} className="movie-link">
-                  
-                    
-                    {item.popularity ? (
+
+
+                  {/* {item.popularity ? (
                     <div className="rating-badge">
                       {item.popularity.toFixed(1)}
                     </div>
                   ) : (
-                    <div>0.0</div>
-                  )}
-                 
+                    <div>""</div>
+                  )} */}
+                    <div className="upper-rating-home">
+                    {item.popularity ? (
+                      <div className="rating-badge-home">
+                        {item.popularity.toFixed(1)}
+                      </div>
+                    ) : (
+                      // <div className="rating-badge">0.0</div>
+                      ""
+                    )}
+                    <div className="saving-badge-home">
+                      <span className="saving-svg"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bookmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className="svg-inline--fa fa-bookmark"><path fill="currentColor" d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z" className=""></path></svg></span>
+                    </div>
+                  </div>
                   <div className="image-wrapper">
                     <img
                       className="poster"

@@ -1,6 +1,6 @@
 /* Page spacing */
 .tv-container {
-  padding-top: 120px;
+  /* padding-top: 60px; */
 }
 
 /* Card */
@@ -19,18 +19,58 @@
 }
 
 /* Rating */
-.rating-badge {
+.upper-rating-tv {
   position: absolute;
-  top: 14px;
-  left: 14px;
   z-index: 5;
+  width: 100%;
+  display: flex;
+  padding: 10px 10px;
+  opacity: 0;
+  visibility: hidden;
+  align-items: center;
+  justify-content: space-between;
+  transition: max-height 0.45s ease, opacity 0.35s ease;
+}
+
+.tv-card:hover .upper-rating-tv {
+  opacity: 1;
+  visibility: visible;
+}
+
+.rating-badge-tv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 6px 12px;
   font-size: 14px;
   font-weight: 700;
   border-radius: 999px;
-  background: linear-gradient(135deg, #facc15, #ef4444);
+  background-color: rgba(16, 22, 29, .7);
+  /* background: linear-gradient(135deg, #facc15, #ef4444); */
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.saving-badge-tv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: rgba(16, 22, 29, .7);
+  /* background: linear-gradient(135deg, #facc15, #ef4444); */
   color: #111;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.saving-badge-tv span {
+  display: inline-block;
+  width: 15px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+
 }
 
 /* Poster wrapper */

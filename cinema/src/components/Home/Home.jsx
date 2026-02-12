@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { PacmanLoader } from "react-spinners";
 import "./Home.css";
-import { box } from "./Context/Context";
+import { box } from "../Context/Context";
 export default function Home() {
   const [dataApi, setDataApi] = useState([]);
   let { searchQuery } = useContext(box);
@@ -46,10 +46,10 @@ export default function Home() {
 
   const getMediaPath = (item) =>
     item.media_type === "tv"
-      ? `details/${item.media_type}/${item.id}`
-      : `details/${item.media_type}/${item.id}`;
+      ? `${item.media_type}/${item.id}/details`
+      : `${item.media_type}/${item.id}/details`;
 
-       if (!dataApi) {
+  if (!dataApi) {
     return (
       <div className="alter-trailer">
         <div className="text-white mt-3">
@@ -76,13 +76,19 @@ export default function Home() {
                   to={getMediaPath(item)}
                   className="movie=link"
                 >
-                  {item.vote_average ? (
-                    <div className="rating-badge">
-                      {item.vote_average.toFixed(1)}
+                  <div className="upper-rating-home">
+                    {item.vote_average ? (
+                      <div className="rating-badge-home">
+                        {item.vote_average.toFixed(1)}
+                      </div>
+                    ) : (
+                      // <div className="rating-badge">0.0</div>
+                      ""
+                    )}
+                    <div className="saving-badge-home">
+                      <span className="saving-svg"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bookmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className="svg-inline--fa fa-bookmark"><path fill="currentColor" d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z" className=""></path></svg></span>
                     </div>
-                  ) : (
-                    <div>0.0</div>
-                  )}
+                  </div>
                   <div className="image-wrapper">
                     <img
                       className="poster"
@@ -90,6 +96,7 @@ export default function Home() {
                       alt={item.title}
                     />
                   </div>
+
                   <div className="movie-content">
                     {/* {showName(item.media_type)} */}
                     {/* <span className="text-danger">{index}</span> */}

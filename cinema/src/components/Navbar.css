@@ -151,7 +151,12 @@
 .navbar-toggler-icon {
   filter: invert(1);
 }
-
+.watchlist img{
+  width: 24px;
+}
+.watchlist .save-later{
+  width: 24px;
+}
 .on-stats {
   display: flex;
   align-items: center;
@@ -191,6 +196,31 @@
     width: 70px;
   }
 }
+.theme-toggle{
+  margin-right: 5px;
+}
 .theme-toggle .sun, .theme-toggle .moon{
   width: 24px;
+}
+.poster-wrapper {
+  position: relative;
+}
+
+.watch-later-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.watch-later-btn img {
+  width: 28px;
+  opacity: 0.85;
+}
+
+.watch-later-btn.saved img {
+  opacity: 1;
 }

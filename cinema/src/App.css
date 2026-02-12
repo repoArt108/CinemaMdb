@@ -63,7 +63,15 @@ body.theme-dark .sun {
 body.theme-light .moon {
   display: none;
 }
+/* save for later visibility */
 
+body.theme-dark .watchlist  .save-light{
+  display: none;
+}
+
+body.theme-light .watchlist  .save-night{
+  display: none;
+}
 /* Light theme adjustments */
 body.theme-light .navbar {
   background: rgba(255, 255, 255, 0.9) !important;
