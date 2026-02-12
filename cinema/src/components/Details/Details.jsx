@@ -80,7 +80,7 @@ export default function Details() {
     .filter(
       (item, index, self) => index === self.findIndex((p) => p.id === item.id),
     )
-    .slice(0, 1); // 👈 only first 2
+    .slice(1, 2); // 👈 only first 2
 
   let getShowName = (mediaType) =>
     mediaType === "tv" ? details.name : details.title;

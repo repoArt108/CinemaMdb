@@ -98,27 +98,7 @@ export default function Home() {
 
             
 
-            {/* Content */}
-            {/* <div className="hero-content-home container">
-              <h1>{item.title || item.name}</h1>
-
-              {item.vote_average && (
-                <div className="hero-rating">
-                  ⭐ {item.vote_average.toFixed(1)}
-                </div>
-              )}
-
-              <p>
-                {item.overview?.slice(0, 200)}...
-              </p>
-
-              <Link
-                to={`/movie/${item.id}/details`}
-                className="btn btn-primary mt-3"
-              >
-                View Details
-              </Link>
-            </div> */}
+            
             <div className="hero-overlay"></div>
             <div className="container hero-content-homex ps-5 ms-5 w-100">
           <div className="row align-items-center">

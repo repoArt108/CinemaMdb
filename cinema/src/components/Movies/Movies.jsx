@@ -85,7 +85,7 @@ export default function Movies() {
           {dataApi.map((item, index) => (
             <div className="col-lg-3 col-md-6 py-4" key={index}>
               <div className="movie-card">
-                <Link to={`details/movie/${item.id}`} className="movie-link">
+                <Link to={`movie/${item.id}/details`} className="movie-link">
                   <div className="upper-rating-movie">
                     {item.vote_average ? (
                       <div className="rating-badge-movie">
