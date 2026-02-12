@@ -173,7 +173,7 @@ export default function Details() {
                     </div>
                   ) : trailerKey ? (
                     <button
-                      className="trailer-btn"
+                      className="trailer-btn text-white me-5"
                       onClick={() => setShowTrailer(true)}
                     >
                       ▶ Watch Trailer
@@ -188,13 +188,13 @@ export default function Details() {
                     </div>
                   ) : trailerKey ? (
                     <Link to={`/${type}/${id}/images`}
-                      className="trailer-btn"
+                      className="trailer-btn text-capitalize"
                       onClick={() => setShowTrailer(true)}
                     >
                       Show images
                     </Link>
                   ) : (
-                    <p className="mt-3">Trailer not available</p>
+                    <p className="mt-3">Images not available</p>
                   )}
                   <div className="people-grid">
                     {directors.map((item) => (

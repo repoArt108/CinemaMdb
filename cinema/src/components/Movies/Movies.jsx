@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { PacmanLoader } from "react-spinners";
-import Slider from "react-slick";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Slider from "react-slick";
 import "../Movies/Movies.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

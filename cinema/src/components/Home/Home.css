@@ -3,6 +3,113 @@
   /* padding-top: 120px; */
 }
 
+/* ================= HERO ================= */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.85) 20%,
+    rgba(0, 0, 0, 0.4) 80%
+  );
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  max-width: 500px;
+}
+.slick-slide {
+    padding: 0;
+  }
+  .hero-slider {
+    position: relative;
+    height: vh;
+}
+
+.hero-slide {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero-backdrop {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  filter: brightness(0.55);
+}
+
+/* .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.9) 25%,
+    rgba(0, 0, 0, 0.4) 70%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+} */
+.hero-content-homex {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  /* max-width: 650px; */
+}
+.hero-content-home {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  max-width: 650px;
+}
+
+.hero-content-home h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-rating {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #ffd700;
+}
+
+.hero-content-home p {
+  margin-top: 15px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Slick dots */
+.slick-dots li button:before {
+  color: white !important;
+  font-size: 10px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-slide,
+  .hero-backdrop {
+    height: 75vh;
+  }
+
+  .hero-content-home h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content-home {
+    padding: 0 20px;
+  }
+}
+
+
 /* Card */
 .movie-card {
   position: relative;
