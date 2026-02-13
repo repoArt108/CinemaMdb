@@ -25,7 +25,7 @@ export default function Images() {
           {dataApi.map((item, index) => (
             <div className="col-lg-3 col-md-6 py-4" key={index}>
               <div className="movie-card">
-                <a href={`https://image.tmdb.org/t/p/original${item.file_path}`} target="_blank" className="movie-link">
+                <a href={`https://image.tmdb.org/t/p/original${item.file_path}`} rel="noopener noreferrer" target="_blank" className="movie-link">
                   
                     
                    
